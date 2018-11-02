@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteRule auteur controleur.php?model=auteur
+RewriteRule lecteur controleur.php?model=lecteur
