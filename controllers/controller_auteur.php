@@ -1,6 +1,6 @@
 <?php
 //    Appelle les fonctions du fichier  modele_auteur.php
-	require('../models/modele_auteur.php');
+	require('modelsmodels/modele_auteur.php');
 
 	if ($action == 'affiche_tout') {
 
@@ -13,7 +13,7 @@
 			$row['nom'] = $row['nom'] . " De La Paille Dans Le Fion";
 			$auteurs[] = $row;
 		}
-		include('../views/auteur/affiche_tout_auteur.php');
+		include('views/auteur/affiche_tout_auteur.php');
 
 	} elseif ($action == 'affiche') {
 
@@ -21,22 +21,22 @@
 		$auteur = resultats_fetch_assoc($result);
 		$auteur['nom'] = $auteur['nom'] . " De La Paille Dans Le Fion";
 
-		include('../views/auteur/affiche_auteur.php');
+		include('views/auteur/affiche_auteur.php');
 
 	} elseif ($action == 'supprime') {
 		
 		$result = supprime($id);
 		if ($result) {
-			include('../views/auteur/supprime_auteur.php');
+			include('views/auteur/supprime_auteur.php');
 		}
 
 	} elseif ($action == 'modifie') {
 		
-		include('../views/auteur/modifie_auteur.php');
+		include('views/auteur/modifie_auteur.php');
 
 	} elseif ($action == 'ajoute') {
 
-		include('../views/auteur/ajoute_auteur.php');
+		include('views/auteur/ajoute_auteur.php');
 
 	} elseif ($action == 'ajoute_from_formulaire') {
 
@@ -46,7 +46,7 @@
 
 		$result = ajoute($nom,$prenom,$date_naissance);
 		if ($result) {
-			include('../views/auteur/ajoute_ok.php');
+			include('views/auteur/ajoute_ok.php');
 		}
 
 	} elseif ($action == 'modifie_from_formulaire') {
@@ -58,7 +58,7 @@
 		$result = modifie($id, $nom, $prenom, $date_naissance);
 
 		if ($result) {
-			include('../views/auteur/modifie_ok.php');
+			include('views/auteur/modifie_ok.php');
 		}
 		
 	}

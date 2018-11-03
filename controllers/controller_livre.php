@@ -1,5 +1,5 @@
 <?php
-	require('../models/modele_livre.php');
+	require('models/modele_livre.php');
 
 	if ($action == 'affiche_tout') {
 
@@ -11,7 +11,7 @@
 			$row['nom'] = $row['nom'] . " De La Paille Dans Le Derche";
 			$livres[] = $row;
 		}
-		include('../views/livre/affiche_tout_livre.php');
+		include('views/livre/affiche_tout_livre.php');
 
 	} elseif ($action == 'affiche') {
 
@@ -19,22 +19,22 @@
 		$livre = resultats_fetch_assoc($result);
 		$livre['nom'] = $livre['nom'] . " De La Paille Dans Le Derche";
 
-		include('../views/livre/affiche_livre.php');
+		include('views/livre/affiche_livre.php');
 
 	} elseif ($action == 'supprime') {
 		
 		$result = supprime($id);
 		if ($result) {
-			include('../views/livre/supprime_livre.php');
+			include('views/livre/supprime_livre.php');
 		}
 
 	} elseif ($action == 'modifie') {
 		
-		include('../views/livre/modifie_livre.php');
+		include('views/livre/modifie_livre.php');
 
 	} elseif ($action == 'ajoute') {
 
-		include('../views/livre/ajoute_livre.php');
+		include('views/livre/ajoute_livre.php');
 
 	} elseif ($action == 'ajoute_from_formulaire') {
 
@@ -43,7 +43,7 @@
 
 		$result = ajoute($nom,$prenom);
 		if ($result) {
-			include('../views/livre/ajoute_ok.php');
+			include('views/livre/ajoute_ok.php');
 		}
 
 	} elseif ($action == 'modifie_from_formulaire') {
@@ -54,7 +54,7 @@
 		$result = modifie($id, $nom, $prenom);
 
 		if ($result) {
-			include('../views/livre/modifie_ok.php');
+			include('views/livre/modifie_ok.php');
 		}
 		
 	}
