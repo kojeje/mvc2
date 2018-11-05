@@ -1,23 +1,29 @@
 <?php
 
-function connecte() {
-	// Connexion et sélection de la base de données
-	$lien = connexion_serveur_bd(SERVERNAME, USER, PASSWORD, DATABASE);
-	set_utf8_bd($lien);
-	return $lien;
+//LISTE DES FUNCTIONS POUR AUTEUR
+
+    function connecte() {
+    // Connexion et sélection de la base de données
+    $lien = connexion_serveur_bd(SERVERNAME, USER, PASSWORD, DATABASE);
+//    encodage des caractères
+    set_utf8_bd($lien);
+
+    return $lien;
 }
 
-function deconnecte() {
-	// Fermeture de la connexion à la base de données
-	deconnexion_serveur_bd($link);
+    function deconnecte() {
+    // Fermeture de la connexion à la base de données
+    deconnexion_serveur_bd($link);
 }
 
+//TOUT AFFICHER
 
 function affiche_tout() {
 	$lien = connecte();
 	$query = 'SELECT id, nom, prenom, date_naissance FROM auteur';
 	return requete_bd($query, $lien);
 }
+
 
 function affiche($auteur) {
 	$lien = connecte();
