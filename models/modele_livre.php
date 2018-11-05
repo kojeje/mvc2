@@ -15,31 +15,31 @@ function deconnecte() {
 
 function affiche_tout() {
 	$lien = connecte();
-	$query = 'SELECT id, nom, prenom, date_naissance FROM auteur';
+	$query = 'SELECT id, titre,auteur_id, annee, resume FROM livre';
 	return requete_bd($query, $lien);
 }
 
-function affiche($auteur) {
+function affiche($livre) {
 	$lien = connecte();
-	$query = 'SELECT id, nom, prenom, date_naissance FROM auteur WHERE id = '.$auteur.' LIMIT 1';
+	$query = 'SELECT id, titre, auteur_id, annee, resume, date_emprunt, lecteur_id FROM livre WHERE id = '.$livre.' LIMIT 1';
 	return requete_bd($query, $lien);
 }
 
-function ajoute($nom, $prenom, $date_naissance) {
+function ajoute($titre, $prenom, $date_naissance) {
 	$lien = connecte();
-	$query = 'INSERT INTO auteur("nom", "prenom", "date_naissance") VALUES (\"'.$nom.'\",\"'.$prenom.'\",\"'.$date_naissance.'\")';
+	$query = 'INSERT INTO livre("titre", "prenom", "date_naissance") VALUES (\"'.$titre.'\",\"'.$prenom.'\",\"'.$date_naissance.'\")';
 	return requete_bd($query, $lien);
 }
 
-function modifie($auteur, $nom, $prenom, $date_naissance) {
+function modifie($livre, $nom, $prenom, $date_naissance) {
 	$lien = connecte();
-	$query = 'UPDATE FROM auteur SET nom = \"'.$nom.'\", prenom = \"'.$prenom.'\", date_naissance = \"'.$date_naissance.'\" WHERE id = '. $auteur;
+	$query = 'UPDATE FROM livre SET nom = \"'.$nom.'\", prenom = \"'.$prenom.'\", date_naissance = \"'.$date_naissance.'\" WHERE id = '. $livre;
 	return requete_bd($query, $lien);
 }
 
-function supprime($auteur) {
+function supprime($livre) {
 	$lien = connecte();
-	$query = 'DELETE FROM auteur WHERE id = '.$auteur;
+	$query = 'DELETE FROM livre WHERE id = '.$livre;
 	return requete_bd($query, $lien);
 }
 

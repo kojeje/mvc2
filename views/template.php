@@ -1,4 +1,6 @@
 <?php
+
+//    PAS COMPRIS comment ça fonctionne exactement !!! une vague idée de l'utilité..'
 function haut() {
   echo "
   <html>
