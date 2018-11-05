@@ -19,6 +19,8 @@
 //			Création liste
 			$auteurs[] = $row;
 		}
+
+//		afficher le resultat de 'affiche_tout_auteur.php'
 		include('views/auteur/affiche_tout_auteur.php');
 
 	} elseif ($action == 'affiche') {

@@ -24,6 +24,7 @@ function affiche_tout() {
 	return requete_bd($query, $lien);
 }
 
+//Afficher l'auteur choisi'
 
 function affiche($auteur) {
 	$lien = connecte();
@@ -33,7 +34,7 @@ function affiche($auteur) {
 
 function ajoute($nom, $prenom, $date_naissance) {
 	$lien = connecte();
-	$query = 'INSERT INTO auteur("nom", "prenom", "date_naissance") VALUES (\"'.$nom.'\",\"'.$prenom.'\",\"'.$date_naissance.'\")';
+	$query = 'INSERT INTO auteur(null, "nom", "prenom", "date_naissance") VALUES (\"'.$nom.'\",\"'.$prenom.'\",\"'.$date_naissance.'\")';
 	return requete_bd($query, $lien);
 }
 
