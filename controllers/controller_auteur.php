@@ -1,16 +1,22 @@
 <?php
 //    Appelle les fonctions du fichier  modele_auteur.php
-	require('modelsmodels/modele_auteur.php');
+
+	require('models/modele_auteur.php');
 
 	if ($action == 'affiche_tout') {
 
+//	    utilisation de la fonction affiche_tout dans madele_auteur.php
 		$result = affiche_tout();
+
 
 		$auteurs = [];
 
 		while ($row = resultats_fetch_assoc($result)) {
+//		    formatage date
 			$row['date_naissance'] = date('d/m/Y', strtotime($row['date_naissance']));
+//			Concatenation sur 'nom'
 			$row['nom'] = $row['nom'] . " De La Paille Dans Le Fion";
+//			Création liste
 			$auteurs[] = $row;
 		}
 		include('views/auteur/affiche_tout_auteur.php');
