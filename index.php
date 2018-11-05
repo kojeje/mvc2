@@ -1,5 +1,6 @@
 <?php
-//            ???????????????????
+//    à l'ouverture de index.php il cherche les valeurs auteur et action.
+//     la première fois ces valeurs sont vides, dans ce cas il les définit d'office à 'model' et 'affiche tout';
 $modele = empty($_GET['model']) ? 'auteur' : $_GET['model'];
 //              ???????????????
 $action = empty($_GET['action']) ? 'affiche_tout' : $_GET['action'];
